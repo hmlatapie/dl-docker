@@ -1,0 +1,5 @@
+docker rm -f dl-docker
+#nvidia-docker run -it -d --name dl-docker -p 8888:8888 -p 6006:6006 -v /home/hmlatapie/dev/dl-docker:/root/sharedfolder hmlatapie/dl-docker /bin/bash -c "tensorboard --logdir=/tmp/tensorboard& && jupyter notebook"
+nvidia-docker run -it --name dl-docker -p 8888:8888 -p 6006:6006 -v /home/hmlatapie/dev/dl-docker:/root/sharedfolder hmlatapie/dl-docker /bin/bash -c 'tensorboard --logdir=/tmp/tensorboard& && jupyter notebook' 
+tensorboard --logdir=/tmp/tensorboard&
+jupyter notebook

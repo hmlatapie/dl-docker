@@ -1,0 +1,2 @@
+tensorboard --logdir=/tmp/tensorboard&
+jupyter notebook
