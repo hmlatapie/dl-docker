@@ -184,6 +184,15 @@ RUN luarocks install nn && \
 	cd iTorch && \
 	luarocks make
 
+# install python 3 notebook
+RUN apt-get install -y python3-pip && \
+	python3 -m pip install ipykernel && \
+	python3 -m ipykernel install --user
+
+# install octave notebook
+RUN apt-get install -y octave && \
+	pip install octave_kernel && \
+	python -m octave_kernel.install
 
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/
