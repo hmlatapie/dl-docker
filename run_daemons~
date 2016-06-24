@@ -1,3 +1,0 @@
-tensorboard --logdir=/tmp/tensorboard&
-cp /root/sharedfolder/jupyter_notebook_config.py ~/.jupyter
-jupyter notebook
