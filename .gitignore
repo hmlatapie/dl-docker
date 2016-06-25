@@ -63,6 +63,7 @@ target/
 
 *~
 *.gz
+*data.txt
 #diectories to ignore
 notebooks_untracked/
 
