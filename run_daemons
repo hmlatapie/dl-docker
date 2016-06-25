@@ -1,4 +1,4 @@
-tensorboard --logdir=/tmp/tensorboard&
+#tensorboard --logdir=/tmp/tensorboard&
 rm /bin/sh 
 ln -s /bin/bash /bin/sh
 cp /root/sharedfolder/jupyter_notebook_config.py ~/.jupyter
