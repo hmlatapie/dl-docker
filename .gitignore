@@ -62,6 +62,7 @@ target/
 .ipynb_checkpoints
 
 *~
+*.gz
 #diectories to ignore
 notebooks_untracked/
 
