@@ -203,9 +203,13 @@ RUN wget -O /tmp/julia.tar.gz https://julialang.s3.amazonaws.com/bin/linux/x64/0
 
 # some more support code
 RUN apt-get install -y graphviz && \
-	pip install pydot
+	pip install pydot && \
+	pip install requests && \
+	pip install fuel
 
 # Set up notebook config
+ENV FUEL_DATA_PATH=/root/fuel
+
 COPY jupyter_notebook_config.py /root/.jupyter/
 
 # Jupyter has issues with being run directly: https://github.com/ipython/ipython/issues/7062
