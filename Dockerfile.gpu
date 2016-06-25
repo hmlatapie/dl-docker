@@ -201,6 +201,10 @@ RUN wget -O /tmp/julia.tar.gz https://julialang.s3.amazonaws.com/bin/linux/x64/0
 	julia -e 'Pkg.add("IJulia")' && \
 	julia -e 'Pkg.add("PyPlot")' 
 
+# some more support code
+RUN apt-get install -y graphviz && \
+	pip install pydot
+
 # Set up notebook config
 COPY jupyter_notebook_config.py /root/.jupyter/
 
