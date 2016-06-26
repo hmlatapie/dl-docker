@@ -10,9 +10,9 @@ $0 cmd options
 		run X
 			where X = 
 				d01
-					dl-docker container
+					hmlatapie/dl-docker container
 				d02
-					jupyter/datascience-notebook
+					hmlatapie/datascience-notebook
 
 	options:
 EOS
@@ -36,17 +36,19 @@ if($command eq 'run')
 	if($container eq 'd01')
 	{
 		$cn = 'dl-docker01';
+		$port = '8888';
 	$cmd =<<EOS;
 docker rm -f $cn
-nvidia-docker run -it -d --name $cn -p 8888:8888 -p 6006:6006 -v /home/hmlatapie/dev/dl-docker:/root/sharedfolder hmlatapie/dl-docker /bin/bash -c /root/sharedfolder/run_daemons
+nvidia-docker run -it -d --name $cn -p $port:8888 -p 6006:6006 -v /home/hmlatapie/dev/dl-docker:/root/sharedfolder hmlatapie/dl-docker /bin/bash -c /root/sharedfolder/run_daemons
 EOS
 	}
 	elsif($container eq 'd02')
 	{
-		$cn = 'jupyter_datascience01';
+		$cn = 'datascience01';
+		$port = '8889';
 	$cmd =<<EOS;
 docker rm -f $cn
-nvidia-docker run -it -d --name $cn -p 8888:8888 -v /home/hmlatapie/dev/dl-docker:/home/jovyan/work/sharedfolder jupyter/datascience-notebook start-notebook.sh --NotebookApp.base_url=/dl-docker01
+nvidia-docker run -it -d --name $cn -p $port:8888 -e GRANT_SUDO=yes --user root -v /home/hmlatapie/dev/dl-docker:/home/jovyan/work/sharedfolder hmlatapie/datascience-notebook start-notebook.sh --NotebookApp.base_url=/$cn
 EOS
 	}
 	else
