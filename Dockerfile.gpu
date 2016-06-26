@@ -205,7 +205,8 @@ RUN wget -O /tmp/julia.tar.gz https://julialang.s3.amazonaws.com/bin/linux/x64/0
 RUN apt-get install -y graphviz && \
 	pip install pydot && \
 	pip install requests && \
-	pip install fuel
+	pip install fuel && \
+	pip install seaborn
 
 # Set up notebook config
 ENV FUEL_DATA_PATH=/root/fuel
