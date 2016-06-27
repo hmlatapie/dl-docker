@@ -199,7 +199,10 @@ RUN wget -O /tmp/julia.tar.gz https://julialang.s3.amazonaws.com/bin/linux/x64/0
 	cd /tmp && tar -xzvf julia.tar.gz && \
 	cp -r /tmp/julia-2e358ce975/* / && \
 	julia -e 'Pkg.add("IJulia")' && \
-	julia -e 'Pkg.add("PyPlot")' 
+	julia -e 'Pkg.add("PyPlot")' && \
+	julia -e 'Pkg.add("Gadfly")' && \
+	julia -e 'Pkg.add("RDatasets")' && \
+	julia -e 'Pkg.add("HDF5")'
 
 # some more support code
 RUN apt-get install -y graphviz && \
