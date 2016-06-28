@@ -209,7 +209,13 @@ RUN apt-get install -y graphviz && \
 	pip install pydot && \
 	pip install requests && \
 	pip install fuel && \
-	pip install seaborn
+	pip install seaborn 
+
+# install R 
+COPY .Rprofile /root/
+COPY installR.pl /root/
+RUN /root/installR.pl installr && \
+	/root/installR.pl installirkernel
 
 # Set up notebook config
 ENV FUEL_DATA_PATH=/root/fuel
