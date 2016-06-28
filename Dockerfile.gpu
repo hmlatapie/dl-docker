@@ -217,6 +217,7 @@ COPY installR.pl /root/
 RUN /root/installR.pl installr && \
 	/root/installR.pl installirkernel
 
+#RUN /root/installR.pl installviz
 # Set up notebook config
 ENV FUEL_DATA_PATH=/root/fuel
 

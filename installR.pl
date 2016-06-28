@@ -9,6 +9,7 @@ $0 cmd options
 	valid commands:
 		installr
 		installirkernel	
+		installviz
 	options:
 EOS
 
@@ -38,6 +39,14 @@ elsif($command eq 'installr')
 {
 	$cmd =<<EOS;
 wget -qO- http://cran.r-project.org/src/base/R-3/R-3.2.5.tar.gz |tar -zvx -C ./ && cd R-3.2.5 && ./configure --with-x=no && make && make install 
+EOS
+	execute($cmd);
+
+}
+elsif($command eq 'installviz')
+{
+	$cmd =<<EOS;
+R -e "install.packages(c('shiny','htmlwidgets','ggplot2','plotly','devtools'))"  
 EOS
 	execute($cmd);
 
