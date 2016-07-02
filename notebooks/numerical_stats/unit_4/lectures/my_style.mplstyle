@@ -1,0 +1,4 @@
+
+figure.figsize: 7, 5
+xtick.labelsize: 14
+ytick.labelsize: 14
