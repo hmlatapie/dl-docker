@@ -219,7 +219,7 @@ RUN /root/installR.pl installr && \
 
 RUN /root/installR.pl installviz
 
-RUN apt-get install -y aptitude && \
+RUN apt-get install -y aptitude python-opencv && \
 	pip2 install giphy-ipython-magic
 
 # Set up notebook config
