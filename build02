@@ -1,0 +1,1 @@
+docker build -t hmlatapie/dl-docker02 -f Dockerfile_tensorflow_from_source.gpu .
