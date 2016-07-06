@@ -1,0 +1,71 @@
+    1  ls
+    2  mkdir dev
+    3  cd dev
+    4  git clone http://github.com/russel91/tensorbox
+    5  git clone http://github.com/russell91/tensorbox
+    6  cd tensorbox/
+    7  ls
+    8  ./download_data.sh 
+    9  ls
+   10  git clone --recurse-submodules https://github.com/tensorflow/tensorflow
+   11  ls
+   12  mv tensorflow/ /dev
+   13  ls
+   14  cd ..
+   15  ls
+   16  cd tensorbox/
+   17  ls
+   18  cd ~
+   19  ls
+   20  cd /
+   21  ls
+   22  find . -iname tensorflow
+   23  cd /dev
+   24  ls
+   25  mv tensorflow ~/dev/
+   26  cd /dev
+   27  ls
+   28  cd ~
+   29  cd dev
+   30  l
+   31  cp tensorbox/utils/hungarian/hungarian.cc tensorflow/tensorflow/core/user_ops/
+   32  aptitude search bazel
+   33  apt-get update 
+   34  aptitude search bazel
+   35  sudo apt-get-repository ppa:webupd8team/java
+   36  sudo add-apt-repository ppa:webupd8team/java
+   37  sudo apt-get update
+   38  sudo apt-get install oracle-java8-installer
+   39  echo "deb http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+   40  curl https://storage.googleapis.com/bazel-apt/doc/apt-key.pub.gpg | sudo apt-key add -
+   41  sudo apt-get update && sudo apt-get install bazel
+   42  sudo apt-get upgrade bazel
+   43  ls
+   44  cd tensorflow/
+   45  ls
+   46  bazel
+   47  ls
+   48  apt-get install python-numpy swig python-dev
+   49  ls
+   50  ./configure 
+   51  which python
+   52  ./configure 
+   53  bazel build -c opt --config=cuda //tensorflow/cc:tutorials_example_trainer
+   54  bazel build -c opt //tensorflow/tools/pip_package:build_pip_package
+   55  bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+   56  bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+   57  pip install /tmp/tensorflow_pkg/tensorflow-0.9.0-py2-none-any.whl 
+   58  cd ..
+   59  cd tensorbox/utils/
+   60  make
+   61  cd ..
+   62  python train.py --hypes hypes/lstm_rezoom.json --gpu 0 --logdir output
+   63  ls
+   64  cd hypes/
+   65  ls
+   66  vim lstm_rezoom.json 
+   67  cd ..
+   68  ls
+   69  tensorboard --logdir output
+   70  history
+   71  history > ~/sharedfolder/install_tensorflow_fromsource.txt
