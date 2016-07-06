@@ -66,4 +66,4 @@ target/
 *data.txt
 #diectories to ignore
 notebooks_untracked/
-
+dev_private/
